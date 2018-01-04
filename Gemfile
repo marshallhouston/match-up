@@ -18,6 +18,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'figaro'
 gem 'faker'
 gem 'faraday'
+gem 'omniauth-google-oauth2'
+gem 'basscss-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
