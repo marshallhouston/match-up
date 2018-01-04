@@ -1,0 +1,17 @@
+<div class="clearfix">
+  <div class="flex justify-center">
+    <div class="flex justify-center flex-column">
+      <div class="flex justify-center">
+      <h1>MatchUp!</h1>
+      </div>
+      <div class="flex justify-center">
+        <h5 class='h3'>find your match at a University or College in Colorado</h5>
+      </div>
+      <div class="flex justify-center">
+        <% unless current_user %>
+        <%= link_to "Login with Google", google_login_path, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
