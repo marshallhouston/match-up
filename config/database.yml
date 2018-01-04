@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: match-up_production
-  username: match-up
-  password: <%= ENV['MATCH-UP_DATABASE_PASSWORD'] %>
