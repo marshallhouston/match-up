@@ -1,0 +1,20 @@
+<div class="overflow-scroll">
+  <table class="table-light overflow-hidden bg-white border rounded">
+    <thead class="bg-darken-1">
+      <tr>
+        <th>Overall Score</th> <th>GPA</th> <th>SAT Score</th> <th>Date</th><th>Scorecard</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @admission_scores.each do |score| %>
+      <tr>
+        <td><%= score.admission_index_score %></td>
+        <td><%= score.gpa %></td>
+        <td><%= score.sat_score %></td>
+        <td><%= time_ago_in_words(score.created_at) %> ago </td>
+        <td><%= link_to "View Scorecard", admission_score_path(score), class: 'h0-responsive caps mt4 mb0 regular' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
