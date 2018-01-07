@@ -3,5 +3,6 @@ FactoryBot.define do
     gpa 2.3
     sat_score 1200
     admission_index_score 92
+    user
   end
 end
