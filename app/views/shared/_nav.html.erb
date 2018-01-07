@@ -1,5 +1,17 @@
-<ul class="nav">
-  <% if current_user %>
-    <%= link_to "Logout", logout_path, method: :delete %>
-  <% end %>
-</ul>
+<nav class="clearfix white bg-black">
+  <div class="sm-col">
+    <%= link_to "Schools", schools_path, class: 'btn py2' %>
+    <% if current_user %>
+      <%= link_to "Dashboard", '', class: 'btn py2' %>
+      <%= link_to "Your Scores", admission_scores_path, class: 'btn py2' %>
+      <%= link_to "Add a new score", new_admission_score_path, class: 'btn py2' %>
+    <% end %>
+  </div>
+  <div class="sm-col-right">
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, method: :delete, class: 'btn py2'%>
+    <% else %>
+      <%= link_to "Login", google_login_path, class: 'btn py2'%>
+    <% end %>
+  </div>
+</nav>
