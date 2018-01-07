@@ -1,8 +1,1 @@
-<%= form_for(@admission_score) do |f| %>
-
-  <p> GPA: <%= f.text_field :gpa %></p>
-
-  <p> SAT Score <%= f.text_field :sat_score %></p>
-
-  <%= f.submit "MatchUp!" %>
-<% end %>
+<%= render "new_score" %>
