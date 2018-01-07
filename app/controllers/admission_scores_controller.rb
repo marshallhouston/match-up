@@ -1,7 +1,12 @@
 class AdmissionScoresController < ApplicationController
+  before_action :logged_in?, only: [:index, :show]
+
+  def index
+    @admission_scores = current_user.admission_scores.latest_scores
+  end
 
   def show
-    @admission_score = AdmissionScore.find(params[:id])
+    @admission_score = current_user.admission_scores.find(params[:id])
   end
 
   def new
@@ -9,9 +14,8 @@ class AdmissionScoresController < ApplicationController
   end
 
   def create
-    admission_score = AdmissionScore.new(admission_score_params)
-    if admission_score.save
-      redirect_to admission_score_path(admission_score)
+    if AdmissionScoreCreator.new(current_user, admission_score_params).call
+      redirect_to admission_score_path(current_user.admission_scores.last)
     else
       redirect_to new_admission_score_path
     end
