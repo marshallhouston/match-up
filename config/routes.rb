@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/auth/google/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
 
-  resources :admission_scores, only: [:new, :create, :show]
+  resources :admission_scores, only: [:new, :create, :show, :index]
   resources :schools, only: [:index]
 end
