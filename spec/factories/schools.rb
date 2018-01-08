@@ -3,6 +3,6 @@ FactoryBot.define do
     sequence :name do |n|
       "School#{n}"
     end
-    min_admission_score { [45..146].sample}
+    min_admission_score { rand(45..146) }
   end
 end
