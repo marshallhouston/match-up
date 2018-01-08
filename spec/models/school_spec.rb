@@ -8,4 +8,12 @@ RSpec.describe School, type: :model do
       expect(school).to be_valid
     end
   end
+
+  describe "relationships" do
+    it "has_many admission_scores" do
+      school = create(:school)
+
+      expect(school).to respond_to(:admission_scores)
+    end
+  end
 end
