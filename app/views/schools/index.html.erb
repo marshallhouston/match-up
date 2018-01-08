@@ -1,6 +1,8 @@
-<% @schools.each do |school| %>
-  <div class="school">
-    <h3 class='h1 h0-responsive caps mt4 mb0 regular'><%= school.name %></h3>
-    <h5 class='h4 h0-responsive caps mt4 mb0 regular'>Minimum Admission Score: <%= school.min_admission_score %></h5>
+<div class="schools flex p1 justify-around flex-wrap">
+  <% @schools.each do |school| %>
+  <div class="school border col-4 m1">
+    <h3 class='h5 h0-responsive caps mt3 mb0 regular flex justify-center'><%= school.name %></h3>
+    <h5 class='h0-responsive mt1 mb2 regular flex justify-center'>Minimum Admission Score: <%= school.min_admission_score %></h5>
   </div>
-<% end %>
+ <% end %>
+</div>
