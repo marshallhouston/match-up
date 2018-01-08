@@ -1,9 +1,12 @@
-<nav class="clearfix white bg-black">
+<nav class="clearfix white">
+  <div class="">
+    <p></p>
+  </div>
   <div class="sm-col">
     <% if current_user %>
       <%= link_to "Dashboard", dashboard_path, class: 'btn py2' %>
       <%= link_to "Your Scores", admission_scores_path, class: 'btn py2' %>
-      <%= link_to "Add a new score", new_admission_score_path, class: 'btn py2' %>
+      <%= link_to "Add a New Score", new_admission_score_path, class: 'btn py2' %>
     <% end %>
     <%= link_to "Schools", schools_path, class: 'btn py2' %>
   </div>

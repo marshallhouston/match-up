@@ -16,3 +16,45 @@
 
 @import "basscss/basscss";
 @import "basscss/basscss-addons";
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Montserrat');
+
+
+$font-stack: 'Montserrat', sans-serif;
+$btn-font: 'Exo+2', sans-serif;
+
+$color-1: #C33C54;
+$color-2: #69D1C5;
+$color-3: #B5FED9;
+$color-4: #0471A6;
+$color-5: #474935;
+
+
+body {
+  font: 100% $font-stack;
+}
+
+input.btn {
+  font: 100% $btn-font;
+  background-color: $color-4;
+}
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+#{$a-tags} {
+  color: $color-4;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: $color-5;
+}
+
+.login-btn {
+  background-color: $color-1;
+}
+
+nav {
+  background-color: $color-2;
+  height: 75px;
+}
