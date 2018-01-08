@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show', as: :dashboard
 
   resources :admission_scores, only: [:new, :create, :show, :index]
+  resources :admission_scores do
+    resources :schools, only: :index, to: "score_schools#index"
+  end
+
   resources :schools, only: [:index]
 end
