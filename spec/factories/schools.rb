@@ -4,5 +4,6 @@ FactoryBot.define do
       "School#{n}"
     end
     min_admission_score { rand(45..146) }
+    slug { name.parameterize }
   end
 end
