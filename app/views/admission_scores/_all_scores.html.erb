@@ -12,11 +12,11 @@
     <tbody>
       <% @admission_scores.each do |score| %>
       <tr>
-        <td class='py2 flex justify-center border bold'><%= score.admission_index_score %></td>
-        <td class='border'><%= score.gpa %></td>
-        <td class='border'><%= score.sat_score %></td>
-        <td class='border'><%= time_ago_in_words(score.created_at) %> ago </td>
-        <td class='border'><%= link_to "View Scorecard", admission_score_path(score), class: 'h0-responsive caps mt4 mb0 regular' %></td>
+        <td class='py2 center border bold'><%= score.admission_index_score %></td>
+        <td class='border center'><%= score.gpa %></td>
+        <td class='border center'><%= score.sat_score %></td>
+        <td class='border center'><%= time_ago_in_words(score.created_at) %> ago </td>
+        <td class='border center'><%= link_to "View Scorecard", admission_score_path(score), class: 'h0-responsive caps mt4 mb0 regular' %></td>
       </tr>
       <% end %>
     </tbody>
