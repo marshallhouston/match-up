@@ -1,60 +1,67 @@
 <div class="p2">
-  <div class="flex p1 justify-center border">
-    <h1 class='bold'>Scorecard</h1>
-    <div class="admission-index-score p1 score border flex flex-column">
+
+  <div class="clearfix flex p1 justify-around border">
+    <div class="sm-col-2-left">
+      <h1 class='bold'>Scorecard</h1>
+    </div>
+    <div class="admission-index-score p1 score border flex flex-column sm-col-5-right">
       <h2 class='h2 bold m1 p0 flex justify-center'>Your Score</h2>
       <h3 class='h2 bold m1 p0 flex justify-center'><%= @admission_score.admission_index_score %></h3>
     </div>
   </div>
-  <div class="flex flex-column border strong_schools">
-    <div class="flex justify-center border">
+
+  <div class="flex flex-column strong_schools py1 my1">
+    <div class="flex justify-center">
       <h2 class='h1'>Strong Candidate for Admission</h2>
     </div>
-    <div class="flex justify-around border">
+    <div class="flex justify-around py1">
       <div class="border col-2">
-        <p><%= @admission_score.strong_schools.count %> schools</p>
-        <%= link_to "View All", admission_score_schools_path(@admission_score, status: 'strong') %>
+        <p class='flex justify-center'><%= @admission_score.strong_schools.count %> schools</p>
+        <%= link_to "View All", admission_score_schools_path(@admission_score, status: 'strong'), class: 'flex justify-center bold' %>
       </div>
       <% @admission_score.strong_schools[0..2].each do |school| %>
         <div class="border col-3">
-          <p><%= school.name %></p>
-          <p><%= school.min_admission_score %></p>
+          <p class='flex justify-center'><%= school.name %></p>
+          <p class='flex justify-center'><%= school.min_admission_score %></p>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="flex flex-column border average_schools">
-    <div class="flex justify-center border">
+
+  <div class="flex flex-column average_schools py1 my1">
+    <div class="flex justify-center">
       <h2 class='h1'>Above Average Candidate for Admission</h2>
     </div>
-    <div class="flex justify-around border">
+    <div class="flex justify-around py1">
       <div class="border col-2">
-        <p><%= @admission_score.average_schools.count %> schools</p>
-        <%= link_to "View All", admission_score_schools_path(@admission_score, status: 'avg') %>
+        <p class='flex justify-center'><%= @admission_score.average_schools.count %> schools</p>
+        <%= link_to "View All", admission_score_schools_path(@admission_score, status: 'avg'), class: 'flex justify-center bold'  %>
       </div>
       <% @admission_score.average_schools[0..2].each do |school| %>
         <div class="border col-3">
-          <p><%= school.name %></p>
-          <p><%= school.min_admission_score %></p>
+          <p class='flex justify-center'><%= school.name %></p>
+          <p class='flex justify-center'><%= school.min_admission_score %></p>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="flex flex-column border below_average_schools">
-    <div class="flex justify-center border">
+
+  <div class="flex flex-column below_average_schools py1 my1">
+    <div class="flex justify-center">
       <h2 class='h1'>Weak Candidate for Admission</h2>
     </div>
-    <div class="flex justify-around border">
+    <div class="flex justify-around py1">
       <div class="border col-2">
-        <p><%= @admission_score.below_average_schools.count %> schools</p>
-        <%= link_to "View All", admission_score_schools_path(@admission_score, status: 'below_avg') %>
+        <p class='flex justify-center'><%= @admission_score.below_average_schools.count %> schools</p>
+        <%= link_to "View All", admission_score_schools_path(@admission_score, status: 'below_avg'), class: 'flex justify-center bold'  %>
       </div>
       <% @admission_score.below_average_schools[0..2].each do |school| %>
         <div class="border col-3">
-          <p><%= school.name %></p>
-          <p><%= school.min_admission_score %></p>
+          <p class='flex justify-center'><%= school.name %></p>
+          <p class='flex justify-center'><%= school.min_admission_score %></p>
         </div>
       <% end %>
     </div>
   </div>
+
 </div>
