@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :schools, only: [:index]
+
+  get '/:slug', to: 'schools#show', as: :school
 end
