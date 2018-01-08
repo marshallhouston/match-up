@@ -16,6 +16,12 @@ RSpec.describe AdmissionScore, type: :model do
 
       expect(admission_score).to respond_to(:user)
     end
+
+    it "has_many schools" do
+      admission_score = create(:admission_score)
+
+      expect(admission_score).to respond_to(:schools)
+    end
   end
 
   describe ".class_methods" do
@@ -38,6 +44,9 @@ RSpec.describe AdmissionScore, type: :model do
           school_1 = create(:school, min_admission_score: 89)
           school_2 = create(:school, min_admission_score: 91)
           school_3 = create(:school, min_admission_score: 101)
+          create(:score_school, admission_score: admission_score, school: school_1, status: 0)
+          create(:score_school, admission_score: admission_score, school: school_2, status: 1)
+          create(:score_school, admission_score: admission_score, school: school_3, status: 2)
 
           strong_schools = admission_score.strong_schools
 
@@ -55,6 +64,9 @@ RSpec.describe AdmissionScore, type: :model do
           school_1 = create(:school, min_admission_score: 90)
           school_2 = create(:school, min_admission_score: 71)
           school_3 = create(:school, min_admission_score: 78)
+          create(:score_school, admission_score: admission_score, school: school_1, status: 2)
+          create(:score_school, admission_score: admission_score, school: school_2, status: 1)
+          create(:score_school, admission_score: admission_score, school: school_3, status: 1)
 
           average_schools = admission_score.average_schools
 
@@ -71,6 +83,8 @@ RSpec.describe AdmissionScore, type: :model do
           admission_score = create(:admission_score, admission_index_score: 90)
           school_1 = create(:school, min_admission_score: 89)
           school_2 = create(:school, min_admission_score: 91)
+          create(:score_school, admission_score: admission_score, school: school_1, status: 1)
+          create(:score_school, admission_score: admission_score, school: school_2, status: 2)
 
           below_average_schools = admission_score.below_average_schools
 
