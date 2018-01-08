@@ -1,8 +1,19 @@
-<%= form_for(@admission_score) do |f| %>
-
-  <p> GPA: <%= f.text_field :gpa %></p>
-
-  <p> SAT Score <%= f.text_field :sat_score %></p>
-
-  <%= f.submit "MatchUp!" %>
-<% end %>
+<div class="flex justify-center mt3">
+  <%= form_for @admission_score, html: { class: 'col-6 border rounded' } do |f| %>
+  <div class="flex justify-center flex-column rounded">
+    <div class='flex'>
+      <div class="flex flex-column p2 col-6">
+        <%= f.text_field :gpa, class: 'block field h5' %>
+        <h2 class='flex justify-center block'> GPA </h2>
+      </div>
+      <div class="flex flex-column p2 col-6">
+        <%= f.text_field :sat_score, class: 'block field h5' %>
+        <h2 class='flex justify-center block'> SAT Score</h2>
+      </div>
+    </div>
+    <div class="flex justify-center pb2">
+      <%= f.submit "MatchUp!", class: 'btn btn-primary justify-center col-10' %>
+    </div>
+  </div>
+  <% end %>
+</div>
