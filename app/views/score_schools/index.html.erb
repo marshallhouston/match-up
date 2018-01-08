@@ -1,0 +1,22 @@
+<div class="flex p1 justify-center">
+  <h1 class='bold'> You're a <%= @status %> applicant at these schools. </h1>
+</div>
+
+<div class="clearfix flex p1 justify-around border">
+  <div class="sm-col-2-left">
+    <h1 class='bold'> <%= link_to "Scorecard", admission_score_path(@admission_score) %></h1>
+  </div>
+  <div class="admission-index-score p1 score border flex flex-column sm-col-5-right">
+    <h2 class='h2 bold m1 p0 flex justify-center'>Your Score</h2>
+    <h3 class='h2 bold m1 p0 flex justify-center'><%= @admission_score.admission_index_score %></h3>
+  </div>
+</div>
+
+<div class="schools flex p1 justify-around flex-wrap">
+  <% @schools.each do |school| %>
+  <div class="school border col-4 m1">
+    <h3 class='h5 h0-responsive caps mt4 mb0 regular'><%= school.name %></h3>
+    <h5 class='h0-responsive mt2 mb0 regular'>Minimum Admission Score: <%= school.min_admission_score %></h5>
+  </div>
+  <% end %>
+</div>
