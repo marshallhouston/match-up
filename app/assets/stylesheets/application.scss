@@ -39,7 +39,7 @@ input.btn {
   background-color: $color-4;
 }
 
-$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags: 'a, a:active, a:hover';
 $a-tags-hover: 'a:active, a:hover';
 
 #{$a-tags} {
