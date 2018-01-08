@@ -20,7 +20,7 @@ feature "As a user with an admission score" do
     end
 
     expect(current_path).to eq("/admission_scores/#{admission_score.id}/schools")
-save_and_open_page
+
     expect(page).to have_content("Your Score 88")
 
     within('.schools') do
