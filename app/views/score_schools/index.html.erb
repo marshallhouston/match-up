@@ -8,8 +8,9 @@
   </div>
   <div class="admission-index-score p1 score border flex flex-column sm-col-5-right">
     <h2 class='h2 bold m1 p0 flex justify-center'>Your Score</h2>
-    <h3 class='h2 bold m1 p0 flex justify-center'><%= @admission_score.admission_index_score %></h3>
+    <h3 id='admissionScore' class='h2 bold m1 p0 flex justify-center'><%= @admission_score.admission_index_score %></h3>
   </div>
+  <div id="chart_div" class='' style="width: 120px; height: 120px;"></div>
 </div>
 
 <div class="schools flex p1 justify-around flex-wrap">
@@ -20,3 +21,42 @@
   </div>
   <% end %>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+
+google.charts.load('current', {'packages':['gauge']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var admissionScore = $('#admissionScore').html();
+
+  var data1 = google.visualization.arrayToDataTable([
+    ['Label', 'Value'],
+    ['Your Score', 0]
+  ]);
+
+  var data2 = google.visualization.arrayToDataTable([
+    ['Label', 'Value'],
+    ['Your Score', parseInt(admissionScore)]
+  ]);
+
+  var options = {
+    width: 400, height: 120,
+    redFrom: 45, redTo: 75,
+    yellowFrom:75, yellowTo: 90,
+    greenFrom:90, greenTo: 146,
+    minorTicks: 10,
+    min: 45,
+    max: 146
+  };
+
+  var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+  chart.draw(data1, options);
+  chart.draw(data2, options);
+}
+</script>
