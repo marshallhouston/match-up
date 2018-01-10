@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
 
-  before_action :logged_in?, only: :index
+  before_action :logged_in?, only: :show
 
   def show
     @admission_score = AdmissionScore.new
