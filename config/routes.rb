@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   resources :schools, only: [:index]
 
   get '/:slug', to: 'schools#show', as: :school
+
+  namespace :api do
+    namespace :v1 do
+      get '/admission_scores', to: 'admission_scores#index'
+    end
+  end
 end
