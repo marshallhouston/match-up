@@ -1,6 +1,3 @@
-google.charts.load('current', {'packages':['gauge']});
-google.charts.setOnLoadCallback(drawChart);
-
 function drawChart() {
 
   var admissionScore = $('#admissionScore').html();
