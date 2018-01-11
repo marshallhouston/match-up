@@ -5,7 +5,7 @@ $(document).ready(function(){
 function overallScoreChart() {
   var userId = $('#user-id').html();
 
-  fetch(API + "/api/v1/admission_scores", {
+  fetch("/api/v1/admission_scores", {
     headers: {
       'user-id': userId
     }
