@@ -21,6 +21,8 @@ gem 'faraday'
 gem 'omniauth-google-oauth2'
 gem 'basscss-rails'
 gem 'newrelic_rpm'
+gem 'jquery-rails'
+gem 'momentjs-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
