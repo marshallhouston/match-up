@@ -12,25 +12,25 @@ function gpaChart() {
   })
     .then(response => response.json())
     .then(data => {
-      createChart(data);
+      createGpaChart(data);
     });
 }
 
-function prepareData(data_points) {
+function prepareGpaData(dataPoints) {
 
-  var data_array = []
-  data_points.forEach(function(data_point) {
+  var dataArray = []
+  dataPoints.forEach(function(dataPoint) {
     obj = {}
-    obj.x = new Date(data_point.created_at)
-    obj.y = data_point.gpa
-    data_array.push(obj)
+    obj.x = new Date(dataPoint.created_at)
+    obj.y = dataPoint.gpa
+    dataArray.push(obj)
   })
-  return data_array
+  return dataArray
 }
 
-function createChart(data_points) {
+function createGpaChart(dataPoints) {
 
-  var gpa_data = prepareData(data_points);
+  var gpaData = prepareGpaData(dataPoints);
 
   var ctx = document.getElementById('gpaChart').getContext('2d');
   var chart = new Chart(ctx, {
@@ -41,7 +41,7 @@ function createChart(data_points) {
             label: "GPA",
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: gpa_data,
+            data: gpaData,
             fill: false
         }]
     },
