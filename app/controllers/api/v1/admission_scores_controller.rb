@@ -1,12 +1,10 @@
-class Api::V1::AdmissionScoresController < Api::V1::BaseController
+class Api::V1::AdmissionScoresController < ApplicationController
 
   def index
-    if current_user
-      admission_scores = current_user.admission_scores
-      render json: admission_scores
-    else
-      render json: "User must be logged in to see scores."
-    end
+    current_user = User.find_by(id: request.headers["user-id"]) || User.find_by(id: session[:user_id])
+
+    admission_scores = AdmissionScore.where(user_id: current_user.id).order(created_at: :desc).limit(5)
+    render json: admission_scores
   end
 
 end

@@ -6,7 +6,7 @@ describe "GET '/api/v1/admission_scores' " do
     create_list(:admission_score, 3, user: user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    get '/api/v1/admission_scores'
+    get '/api/v1/admission_scores', headers: { 'user-id': user.id }
 
     admission_scores = JSON.parse(response.body, symbolize_names: true)
     admission_score = admission_scores.first
