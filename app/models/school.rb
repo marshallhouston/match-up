@@ -5,6 +5,9 @@ class School < ApplicationRecord
   has_many :admission_scores, through: :score_schools
 
   def self.filter_by(status)
+    valid_statuses = ["avg", "below_avg", "strong"]
+    status = "avg" unless valid_statuses.include?(status)
+
     where(score_schools: {status: status}).order(min_admission_score: :desc)
   end
 
