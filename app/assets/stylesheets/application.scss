@@ -35,7 +35,6 @@ body {
 }
 
 input.btn {
-  font: 100% $btn-font;
   background-color: $color-4;
 }
 
@@ -50,6 +49,10 @@ $a-tags-hover: 'a:active, a:hover';
   color: $color-5;
 }
 
+nav.#{$a-tags-hover} {
+  color: $color-4;
+}
+
 .login-btn {
   background-color: $color-1;
 }
@@ -57,4 +60,8 @@ $a-tags-hover: 'a:active, a:hover';
 nav {
   background-color: $color-2;
   height: 75px;
+}
+
+button.chart {
+  background-color: $color-4;
 }
