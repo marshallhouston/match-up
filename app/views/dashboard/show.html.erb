@@ -1,6 +1,26 @@
+<div id="user-id" style="display: none;">
+  <%= current_user.id %>
+</div>
+
 <div class="new_score pb1">
   <%= render "admission_scores/new_score" %>
 </div>
+<div class="center">
+  <button name="show-gpa" class="btn btn-primary">Show GPA Chart</button>
+</div>
+
+<div class="flex justify-center">
+  <div class="col-4">
+    <canvas id="gpaChart"></canvas>
+  </div>
+</div>
+
 <div class="scores">
   <%= render "admission_scores/all_scores" %>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript">
+  var API = "<%= ENV['BASE_API'] %>";
+</script>
