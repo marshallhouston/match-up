@@ -10,11 +10,11 @@ class AdmissionScore < ApplicationRecord
   end
 
   def strong_schools
-    schools.where(score_schools: {status: 'strong'} )
+    schools.where(score_schools: {status: 'strong'} ).order(min_admission_score: :desc)
   end
 
   def average_schools
-    schools.where(score_schools: {status: 'avg'} )
+    schools.where(score_schools: {status: 'avg'} ).order(min_admission_score: :desc)
   end
 
   def below_average_schools
