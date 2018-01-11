@@ -5,13 +5,19 @@
 <div class="new_score pb1">
   <%= render "admission_scores/new_score" %>
 </div>
-<div class="center">
-  <button name="show-gpa" class="btn btn-primary">Show GPA Chart</button>
-</div>
 
 <div class="flex justify-center">
   <div class="col-4">
+    <div class="center">
+      <button name="show-gpa" class="btn btn-primary">Show GPA Chart</button>
+    </div>
     <canvas id="gpaChart"></canvas>
+  </div>
+  <div class="col-4">
+    <div class="center">
+      <button name="show-sat" class="btn btn-primary">Show SAT Chart</button>
+    </div>
+    <canvas id="satChart"></canvas>
   </div>
 </div>
 
