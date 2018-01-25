@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# MatchUp!
 
-Things you may want to cover:
+MatchUp! helps high school students find the right match at a public college or university in Colorado. With MatchUp!, teachers and students can set goals to realistically change their college options. If students can see the future, they can change the present!
 
-* Ruby version
+It was built from the ground up over a 10 day period by Marshall Houston as a personal project at the [Turing School of Software & Design](https://www.turing.io/)
 
-* System dependencies
+## Setup
 
-* Configuration
+Install Rails at the command line if you haven't yet
 
-* Database creation
+    $ gem install rails
 
-* Database initialization
 
-* How to run the test suite
+Clone the repo.
 
-* Services (job queues, cache servers, search engines, etc.)
+    $ git clone https://github.com/marshallhouston/match-up.git
 
-* Deployment instructions
+Change into the directory and install gem dependencies
 
-* ...
+    $ cd match-up
+    $ bundle install
+
+Next, initialize the database, run the migrations, and seed the database.
+
+    $ rake db:create
+    $ rake db:migrate
+    $ rake populate_colorado_schools
+    $ rake add_slug_to_schools
+
+To run the app on a local server,
+
+    $ rails s
+
+This will run the app on port 3000 'http://localhost:3000'. The app requires a Google Account to access the functionality.
+
+## Testing
+
+MatchUp! is tested in RSpec, the contents of which can be found in the /spec directory folder.
+
+To prepare the database for testing, run
+
+    $ rake db:test:prepare
+
+To run the test suite,
+
+    $ rspec
