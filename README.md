@@ -45,4 +45,4 @@ To prepare the database for testing, run
 
 To run the test suite,
 
-    $ rspec
+    $ bundle exec rspec
